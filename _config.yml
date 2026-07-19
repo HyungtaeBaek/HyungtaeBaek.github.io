@@ -32,7 +32,7 @@ author:
   # Academic websites (사용하는 것만 주소를 넣고 나머지는 비워두세요)
   academia         : 
   arxiv            : 
-  googlescholar    : "https://scholar.google.com/citations?user=본인의아이디"
+  googlescholar    : "https://scholar.google.com/citations?user=dzWk-4QAAAAJ"
   inspire-hep      : 
   impactstory      : 
   orcid            : "https://orcid.org/0000-0003-1477-5715"
@@ -47,7 +47,7 @@ author:
   bitbucket        : 
   codepen          : 
   dribbble         : 
-  github           : "본인의깃허브아이디"
+  github           :
   kaggle           :   
   stackoverflow    :  
 
