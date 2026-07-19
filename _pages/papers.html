@@ -7,21 +7,21 @@ author_profile: true
 
 <h2>Published Papers</h2>
 {% for post in site.papers %}
-  {% if post.category == 'published' %}
+  {% if post.paper_status == 'published' %}
     {% include archive-single.html %}
   {% endif %}
 {% endfor %}
 
 <h2>Accepted Papers</h2>
 {% for post in site.papers %}
-  {% if post.category == 'accepted' %}
+  {% if post.paper_status == 'accepted' %}
     {% include archive-single.html %}
   {% endif %}
 {% endfor %}
 
 <h2>Submitted Papers</h2>
 {% for post in site.papers %}
-  {% if post.category == 'submitted' %}
+  {% if post.paper_status == 'submitted' %}
     {% include archive-single.html %}
   {% endif %}
 {% endfor %}
