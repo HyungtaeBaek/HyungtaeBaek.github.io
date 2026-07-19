@@ -20,7 +20,7 @@ repository       : "HyungtaeBaek/HyungtaeBaek.github.io"
 # Site Author - The following control what appear as part of the author content on the side bar.
 author:
   # Biographic information
-  avatar           : "profile.jpg"
+  avatar           : "3.5x4.5.jpg"
   name             : "Hyungtae Baek"
   pronouns         : ""  
   bio              : "Ph.D. in Mathematics at Kyungpook National University. Research focus on Commutative Algebra."
