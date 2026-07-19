@@ -1,86 +1,73 @@
 # Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your entire site, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# `jekyll serve -l -H localhost`. If you change this file, please restart the 
-# server process.
 
 # Basic Site Settings
-locale           : "en-US"
-site_theme       : "default" 
-title            : "Hyungtae Baek"
-title_separator  : "-"
-name             : &name "Hyungtae Baek"
-description      : &description "Hyungtae Baek - Ph.D. Researcher in Mathematics"   
-url              : "https://HyungtaeBaek.github.io" 
-baseurl          : "" 
-repository       : "HyungtaeBaek/HyungtaeBaek.github.io"
+locale: "en-US"
+site_theme: "default"
+title: "Hyungtae Baek"
+title_separator: "-"
+name: "Hyungtae Baek"
+description: "Ph.D. Researcher in Mathematics"
+url: "https://HyungtaeBaek.github.io"
+baseurl: ""
+repository: "HyungtaeBaek/HyungtaeBaek.github.io"
 
-# Site Author - The following control what appear as part of the author content on the side bar.
+# Site Author
 author:
-  # Biographic information
-  avatar           : "3.5x4.5.jpg"
-  name             : "Hyungtae Baek"
-  pronouns         : ""  
-  bio              : "Ph.D. candidate in Mathematics at Kyungpook National University. Research focus on Commutative Algebra."
-  location         : "Daegu, South Korea"
-  employer         : "Kyungpook National University"
-  uri              : 
-  email            : "htbaek5@gmail.com" 
+  avatar: "profile.png"
+  name: "Hyungtae Baek"
+  pronouns: ""
+  bio: "Ph.D. in Mathematics at Kyungpook National University. Research focus on Integer-Valued Polynomials."
+  location: "Daegu, South Korea"
+  employer: "Kyungpook National University"
+  uri: ""
+  email: ""
+  academia: ""
+  arxiv: ""
+  googlescholar: "https://scholar.google.com/citations?user=dzWk-4QAAAAJ"
+  inspire-hep: ""
+  impactstory: ""
+  orcid: ""
+  semantic: ""
+  ssrn: ""
+  pubmed: ""
+  researchgate: ""
+  scopus: ""
+  zotero: ""
+  bitbucket: ""
+  codepen: ""
+  dribbble: ""
+  github: "HyungtaeBaek"
+  kaggle: ""
+  stackoverflow: ""
+  artstation: ""
+  bluesky: ""
+  facebook: ""
+  flickr: ""
+  foursquare: ""
+  goodreads: ""
+  google_plus: ""
+  keybase: ""
+  instagram: ""
+  lastfm: ""
+  linkedin: ""
+  mastodon: ""
+  medium: ""
+  pinterest: ""
+  soundcloud: ""
+  steam: ""
+  telegram: ""
+  tumblr: ""
+  twitter: ""
+  vine: ""
+  weibo: ""
+  wikipedia: ""
+  xing: ""
+  youtube: ""
+  zhihu: ""
 
-  # Academic websites (사용하는 것만 주소를 넣고 나머지는 비워두세요)
-  academia         : 
-  arxiv            : "https://arxiv.org/search/advanced?advanced=1&terms-0-operator=AND&terms-0-term=Hyungtae+Baek&terms-0-field=author&classification-mathematics=y&classification-physics_archives=all&classification-include_cross_list=include&date-filter_by=all_dates&date-year=&date-from_date=&date-to_date=&date-date_type=submitted_date&abstracts=show&size=50&order=-announced_date_first"
-  googlescholar    : "https://scholar.google.com/citations?user=dzWk-4QAAAAJ"
-  inspire-hep      : 
-  impactstory      : 
-  orcid            : "https://orcid.org/0000-0003-1477-5715"
-  semantic         : 
-  ssrn             : 
-  pubmed           : 
-  researchgate     : 
-  scopus           : 
-  zotero           : 
-
-  # Repositories and software development
-  bitbucket        : 
-  codepen          : 
-  dribbble         : 
-  github           :
-  kaggle           :   
-  stackoverflow    :  
-
-  # Social media
-  artstation       : 
-  bluesky          : 
-  facebook         : 
-  flickr           : 
-  foursquare       : 
-  goodreads        : 
-  google_plus      : 
-  keybase          : 
-  instagram        : 
-  lastfm           : 
-  linkedin         : 
-  mastodon         : 
-  medium           : 
-  pinterest        : 
-  soundcloud       : 
-  steam            : 
-  telegram         : 
-  tumblr           : 
-  twitter          : 
-  vine             : 
-  weibo            : 
-  wikipedia        : 
-  xing             : 
-  youtube          : 
-  zhihu            : 
-
-# Publication Category - The following the list of publication categories and their headings
+# Publication Category
 publication_category:
-published:
+  published:
     title: 'Published Papers'
   accepted:
     title: 'Accepted Papers'
@@ -88,69 +75,41 @@ published:
     title: 'Submitted Papers'
 
 # Site Settings
-teaser           :  # filename of teaser fallback teaser image placed in /images/ for social media previews
-breadcrumbs      : false # true, false (default)
-words_per_minute : 160
-future           : true
-read_more        : "disabled" # if enabled, adds "Read more" links to excerpts
-talkmap_link     : false      #change to true to add link to talkmap on talks page
+teaser: ""
+breadcrumbs: false
+words_per_minute: 160
+future: true
+read_more: "disabled"
+talkmap_link: false
 comments:
-  provider       : # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "custom"
-  disqus:
-    shortname    :
-  discourse:
-    server       : # https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org
-  facebook:
-    appid        :
-    num_posts    : # 5 (default)
-    colorscheme  : # "light" (default), "dark"
-staticman:
-  allowedFields  : ['name', 'email', 'url', 'message']
-  branch         : "gh-pages" # "master", "gh-pages"
-  commitMessage  : "New comment."
-  filename       : comment-{@timestamp}
-  format         : "yml"
-  moderation     : true
-  path           : "_data/comments/{options.slug}"
-  requiredFields : ['name', 'email', 'message']
-  transforms:
-    email        : "md5"
-  generatedFields:
-    date:
-      type       : "date"
-      options:
-        format   : "iso8601" # "iso8601" (default), "timestamp-seconds", "timestamp-milliseconds"
+  provider: false
 atom_feed:
-  hide           : false     # change to true to hide the RSS feed in the footer
-  path           : # blank (default) uses feed.xml
+  hide: false
+  path: ""
 
 # SEO Related
-google_site_verification :
-bing_site_verification   :
-alexa_site_verification  :
-yandex_site_verification :
+google_site_verification: ""
+bing_site_verification: ""
+alexa_site_verification: ""
+yandex_site_verification: ""
 
 # Social Sharing
 twitter:
-  username       : &twitter
+  username: ""
 facebook:
-  username       :
-  app_id         :
-  publisher      :
-og_image         :  # Social media default site image
-og_description   :  # Social media default site image description
-# For specifying social profiles
-# - https://developers.google.com/structured-data/customize/social-profiles
+  username: ""
+  app_id: ""
+  publisher: ""
+og_image: ""
+og_description: ""
 social:
-  type           : # Person or Organization (defaults to Person)
-  name           : # If the user or organization name differs from the site's name
-  links: # An array of links to social media profiles
+  type: ""
+  name: ""
+  links: []
 
 # Analytics
 analytics:
-  provider       :  "false" # false (default), "google", "google-universal", "google-analytics-4", "custom"
-  google:
-    tracking_id  :
+  provider: "false"
 
 # Reading Files
 include:
@@ -215,7 +174,7 @@ collections:
     permalink: /:collection/:path/
   publications:
     output: true
-    permalink: /:collection/:path/
+    permalink: /papers/:path/
   portfolio:
     output: true
     permalink: /:collection/:path/
@@ -225,7 +184,6 @@ collections:
 
 # These settings control how pages and collections are included in the site
 defaults:
-  # _posts
   - scope:
       path: ""
       type: posts
@@ -236,14 +194,12 @@ defaults:
       comments: true
       share: true
       related: true
-  # _pages
   - scope:
       path: ""
       type: pages
     values:
       layout: single
       author_profile: true
-  # _teaching
   - scope:
       path: ""
       type: teaching
@@ -252,7 +208,6 @@ defaults:
       author_profile: true
       share: true
       comments: true
-  # _publications
   - scope:
       path: ""
       type: publications
@@ -261,7 +216,6 @@ defaults:
       author_profile: true
       share: true
       comments: true
-  # _portfolio
   - scope:
       path: ""
       type: portfolio
@@ -270,7 +224,6 @@ defaults:
       author_profile: true
       share: true
       comment: true
-  # _talks
   - scope:
       path: ""
       type: talks
@@ -282,13 +235,11 @@ defaults:
 # Sass/SCSS
 sass:
   sass_dir: _sass
-  style: compressed # https://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
+  style: compressed
 
 # Outputting
 permalink: /:categories/:title/
-# paginate: 5 # amount of posts to show
-# paginate_path: /page:num/
-timezone: Etc/UTC # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: Etc/UTC
 
 # Plugins
 plugins:
