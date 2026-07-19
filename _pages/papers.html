@@ -5,21 +5,21 @@ permalink: /papers/
 author_profile: true
 ---
 
-## Published Papers
+<h2>Published Papers</h2>
 {% for post in site.papers %}
   {% if post.category == 'published' %}
     {% include archive-single.html %}
   {% endif %}
 {% endfor %}
 
-## Accepted Papers
+<h2>Accepted Papers</h2>
 {% for post in site.papers %}
   {% if post.category == 'accepted' %}
     {% include archive-single.html %}
   {% endif %}
 {% endfor %}
 
-## Submitted Papers
+<h2>Submitted Papers</h2>
 {% for post in site.papers %}
   {% if post.category == 'submitted' %}
     {% include archive-single.html %}
