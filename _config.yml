@@ -16,54 +16,54 @@ author:
   avatar: "3.5x4.5.jpg"
   name: "Hyungtae Baek"
   pronouns: ""
-  bio: "Ph.D. in Mathematics at Kyungpook National University. Research focus on Integer-Valued Polynomials."
+  bio: "Ph.D. candidate in Mathematics at Kyungpook National University. Research focus on Commutative Algebra"
   location: "Daegu, South Korea"
   employer: "Kyungpook National University"
-  uri: ""
+  uri: 
   email: ""
-  academia: ""
+  academia: 
   arxiv: ""
   googlescholar: "https://scholar.google.com/citations?user=dzWk-4QAAAAJ"
-  inspire-hep: ""
-  impactstory: ""
+  inspire-hep: 
+  impactstory: 
   orcid: ""
-  semantic: ""
-  ssrn: ""
-  pubmed: ""
+  semantic: 
+  ssrn: 
+  pubmed: 
   researchgate: ""
-  scopus: ""
-  zotero: ""
-  bitbucket: ""
-  codepen: ""
-  dribbble: ""
-  github: "HyungtaeBaek"
-  kaggle: ""
-  stackoverflow: ""
-  artstation: ""
-  bluesky: ""
-  facebook: ""
-  flickr: ""
-  foursquare: ""
-  goodreads: ""
-  google_plus: ""
-  keybase: ""
-  instagram: ""
-  lastfm: ""
-  linkedin: ""
-  mastodon: ""
-  medium: ""
-  pinterest: ""
-  soundcloud: ""
-  steam: ""
-  telegram: ""
-  tumblr: ""
-  twitter: ""
-  vine: ""
-  weibo: ""
-  wikipedia: ""
-  xing: ""
-  youtube: ""
-  zhihu: ""
+  scopus: 
+  zotero: 
+  bitbucket: 
+  codepen: 
+  dribbble: 
+  github: 
+  kaggle: 
+  stackoverflow: 
+  artstation: 
+  bluesky: 
+  facebook: 
+  flickr: 
+  foursquare: 
+  goodreads: 
+  google_plus: 
+  keybase: 
+  instagram: 
+  lastfm: 
+  linkedin: 
+  mastodon: 
+  medium: 
+  pinterest: 
+  soundcloud: 
+  steam: 
+  telegram: 
+  tumblr: 
+  twitter: 
+  vine: 
+  weibo: 
+  wikipedia: 
+  xing: 
+  youtube: 
+  zhihu: 
 
 # Publication Category
 publication_category:
