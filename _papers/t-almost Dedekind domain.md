@@ -2,13 +2,10 @@
 title: "Characterizations of $t$-almost Dedekind domains via $w$-secondary modules"
 collection: papers
 paper_status: accepted
-permalink: /papers/t-almost-Dedekind
+permalink: /papers/t-almost-dedekind
 date: 2026-03-17
 venue: "Filomat"
-slidesurl: 
-paperurl: 
-citation: "H. Kim, <b>H. Baek</b>and H. Hamdi, <i>Characterizations of $t$-almost Dedekind domains via $w$-secondary modules</i>, Filomat, in press (Accepted)"
-Filomat, in press (Accepted).
+citation: "H. Kim, <b>H. Baek</b> and H. Hamdi, <i>Characterizations of $t$-almost Dedekind domains via $w$-secondary modules</i>, Filomat, in press (Accepted)."
 ---
 
 <!-- MathJax 설정: $ 기호로도 수식이 작동하게 만드는 마법의 스위치 -->
