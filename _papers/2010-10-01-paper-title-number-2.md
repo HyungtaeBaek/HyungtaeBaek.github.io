@@ -5,8 +5,8 @@ paper_status: published
 permalink: /papers/2025-10-31-s-n-absorbing
 date: 2025-10-31
 venue: "Communications in Algebra"
-slidesurl: "https://academicpages.github.io/files/slides2.pdf"
-paperurl: "https://www.tandfonline.com/doi/full/10.1080/00927872.2025.2479132"
+slidesurl: "https://www.tandfonline.com/doi/full/10.1080/00927872.2025.2479132"
+paperurl: 
 citation: "<b>H. Baek</b>, H. S. Choi and J. W. Lim, <i>On $S$-$n$-absorbing ideals</i>, Comm. Alg. 53 (2025) 4191-4205."
 ---
 
