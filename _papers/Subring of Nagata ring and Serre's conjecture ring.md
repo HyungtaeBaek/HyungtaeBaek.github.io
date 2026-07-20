@@ -5,6 +5,8 @@ paper_status: submitted
 permalink: /papers/subring-Nagata-Serre
 date: 2024-08-16
 venue: "arXiv"
+slidesurl: "https://arxiv.org/abs/2408.08758"
+paperurl: 
 citation: "<b>H. Baek</b> and J. W. Lim, <i>CA special subring of the Nagata ring and the Serre’s conjecture ring</i>, arXiv:2408.08758 (2024), preprint."
 ---
 
