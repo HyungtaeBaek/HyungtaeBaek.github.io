@@ -6,7 +6,7 @@ author_profile: true
 ---
 
 <details open>
-  <summary><h2>Published Papers</h2></summary>
+  <summary style="font-size: 1.5em; font-weight: bold; cursor: pointer; margin-bottom: 0.5em;">Published Papers</summary>
   <ul>
   {% for post in site.papers %}
     {% if post.paper_status == 'published' %}
@@ -25,7 +25,7 @@ author_profile: true
 </details>
 
 <details>
-  <summary><h2>Accepted Papers</h2></summary>
+  <summary style="font-size: 1.5em; font-weight: bold; cursor: pointer; margin-bottom: 0.5em;">Accepted Papers</summary>
   <ul>
   {% for post in site.papers %}
     {% if post.paper_status == 'accepted' %}
@@ -44,7 +44,7 @@ author_profile: true
 </details>
 
 <details>
-  <summary><h2>Submitted Papers</h2></summary>
+  <summary style="font-size: 1.5em; font-weight: bold; cursor: pointer; margin-bottom: 0.5em;">Submitted Papers</summary>
   <ul>
   {% for post in site.papers %}
     {% if post.paper_status == 'submitted' %}
