@@ -1,5 +1,4 @@
 ---
----
 title: "A special subring of the Nagata ring and the Serre’s conjecture ring"
 collection: papers
 paper_status: submitted
