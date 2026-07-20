@@ -1,5 +1,4 @@
 ---
----
 title: "Characterizations of $t$-almost Dedekind domains via $w$-secondary modules"
 collection: papers
 paper_status: accepted
