@@ -5,23 +5,59 @@ permalink: /papers/
 author_profile: true
 ---
 
-<h2>Published Papers</h2>
-{% for post in site.papers %}
-  {% if post.paper_status == 'published' %}
-    {% include archive-single.html %}
-  {% endif %}
-{% endfor %}
+<details open>
+  <summary><h2>Published Papers</h2></summary>
+  <ul>
+  {% for post in site.papers %}
+    {% if post.paper_status == 'published' %}
+      <li>
+        <a href="{{ post.url }}">
+          {% if post.citation %}
+            {{ post.citation }}
+          {% else %}
+            {{ post.title }}
+          {% endif %}
+        </a>
+      </li>
+    {% endif %}
+  {% endfor %}
+  </ul>
+</details>
 
-<h2>Accepted Papers</h2>
-{% for post in site.papers %}
-  {% if post.paper_status == 'accepted' %}
-    {% include archive-single.html %}
-  {% endif %}
-{% endfor %}
+<details>
+  <summary><h2>Accepted Papers</h2></summary>
+  <ul>
+  {% for post in site.papers %}
+    {% if post.paper_status == 'accepted' %}
+      <li>
+        <a href="{{ post.url }}">
+          {% if post.citation %}
+            {{ post.citation }}
+          {% else %}
+            {{ post.title }}
+          {% endif %}
+        </a>
+      </li>
+    {% endif %}
+  {% endfor %}
+  </ul>
+</details>
 
-<h2>Submitted Papers</h2>
-{% for post in site.papers %}
-  {% if post.paper_status == 'submitted' %}
-    {% include archive-single.html %}
-  {% endif %}
-{% endfor %}
+<details>
+  <summary><h2>Submitted Papers</h2></summary>
+  <ul>
+  {% for post in site.papers %}
+    {% if post.paper_status == 'submitted' %}
+      <li>
+        <a href="{{ post.url }}">
+          {% if post.citation %}
+            {{ post.citation }}
+          {% else %}
+            {{ post.title }}
+          {% endif %}
+        </a>
+      </li>
+    {% endif %}
+  {% endfor %}
+  </ul>
+</details>
