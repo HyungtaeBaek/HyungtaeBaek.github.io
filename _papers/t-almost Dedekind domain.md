@@ -3,7 +3,7 @@ title: "Characterizations of $t$-almost Dedekind domains via $w$-secondary modul
 collection: papers
 paper_status: accepted
 permalink: /papers/t-almost-Dedekind
-date: 2026-10-31
+date: 2026-03-17
 venue: "Filomat"
 slidesurl: 
 paperurl: 
