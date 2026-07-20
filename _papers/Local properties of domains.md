@@ -1,10 +1,13 @@
 ---
+---
 title: "On the transfer of certain ring-theoretic properties in Anderson rings"
 collection: papers
 paper_status: submitted
 permalink: /papers/Anderson-ring-first
 date: 2024-10-22
 venue: "arXiv"
+slidesurl: "https://arxiv.org/abs/2410.17007"
+paperurl: 
 citation: "<b>H. Baek</b>, J. W. Lim and A. Tamoussit, <i>On the transfer of certain ring-theoretic properties in Anderson rings</i>, arXiv:2410.17007 (2024), preprint."
 ---
 
