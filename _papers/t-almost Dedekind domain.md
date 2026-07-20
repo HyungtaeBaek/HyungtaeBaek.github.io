@@ -23,13 +23,13 @@ A GV-torsion-free $R$-module $M$ is called <i>$w$-secondary</i> if, for every $r
 A $w$-module $M$ is said to admit a <i>$w$-secondary representation</i> if
 $M=(N_{1}+\cdots+N_{n})_{w}$,
 where, for each $i=1,\ldots,n$, $N_{i}$ is a $w$-secondary submodule of $M$ and
-$P_{i}=\sqrt{\operatorname{Ann}(N_{i})}$.
+$P_{i}=\sqrt{\rm Ann}(N_{i})}$.
 Such a representation is called <i>minimal</i> if the ideals $P_{1},\ldots,P_{n}$ are pairwise distinct.
 A $w$-module $M$ is called <i>$w$-representable</i> if it admits a minimal $w$-secondary representation.
 Moreover, if
 $M=(N_{1}\oplus\cdots\oplus N_{n})_{w}$,
 where each $N_{i}$ is a $w$-secondary submodule of $M$ and the ideals
-$P_{i}=\sqrt{\operatorname{Ann}(N_{i})}$ are pairwise distinct, then $M$ is called
+$P_{i}=\sqrt{\rm Ann}(N_{i})}$ are pairwise distinct, then $M$ is called
 <i>strongly $w$-representable</i>.
 In this paper, we first characterize $w$-secondary modules and investigate several of their fundamental properties.
 We then prove that a ring $R$ is a $t$-almost Dedekind domain, that is, $R_{P}$ is a discrete valuation ring for each maximal $w$-ideal $P$ of $R$, if and only if $R$ has $w$-dimension one and every $w$-representable $w$-module is strongly $w$-representable.
