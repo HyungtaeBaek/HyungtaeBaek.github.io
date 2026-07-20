@@ -30,7 +30,7 @@ A $w$-module $M$ is called <i>$w$-representable</i> if it admits a minimal $w$-s
 Moreover, if
 <center>
 $M=(N_{1}\oplus\cdots\oplus N_{n})_{w},$
-<\center>
+</center>
 where each $N_{i}$ is a $w$-secondary submodule of $M$ and the ideals
 $P_{i}=\sqrt{\text{Ann}(N_{i})}$ are pairwise distinct, then $M$ is called
 <i>strongly $w$-representable</i>.
