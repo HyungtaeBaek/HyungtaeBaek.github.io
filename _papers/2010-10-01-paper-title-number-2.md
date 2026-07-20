@@ -7,7 +7,7 @@ date: 2025-10-31
 venue: 'Communications in Algebra'
 slidesurl: 'https://academicpages.github.io/files/slides2.pdf'
 paperurl: 'https://academicpages.github.io/files/paper2.pdf'
-citation: '<b>H. Baek</b>, H. S. Choi and J. W. Lim, <i>On \\(S\\)-\\(n\\)-absorbing ideals</i>, Comm. Alg. 53 (2025) 4191-4205.'
+citation: '<b>H. Baek</b>, H. S. Choi and J. W. Lim, <i>On \(S\)-\(n\)-absorbing ideals</i>, Comm. Alg. 53 (2025) 4191-4205.'
 ---
 
 <!-- 템플릿 설정과 무관하게 수식을 강제로 변환시키는 마법의 스크립트 -->
