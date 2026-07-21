@@ -5,28 +5,34 @@ permalink: /talks/
 author_profile: true
 ---
 
-<!-- 탭 버튼을 세련되게 꾸며주는 CSS 디자인 -->
+<!-- 디자인 및 레이아웃 설정 -->
 <style>
+  /* --- 1. 상단 네비게이션(메뉴) 현재 페이지 클릭 막힘 해결 --- */
+  li.active a, .active a, .masthead__menu-item.active a {
+    cursor: pointer !important;
+    pointer-events: auto !important;
+  }
+
+  /* --- 2. 탭 디자인 (간격 시원하게 확장) --- */
   .tab-buttons { 
     display: flex; 
-    justify-content: center; /* 버튼들을 가운데로 예쁘게 모아줌 */
-    gap: 10px; /* 버튼 사이 간격 */
+    justify-content: center; 
+    gap: 40px; /* ★ 기존 10px에서 40px로 4배 넓혔습니다 */
     margin-bottom: 25px; 
     border-bottom: 1px solid #ddd; 
   }
   .tablink {
     background-color: transparent; 
     border: none; 
-    border-bottom: 3px solid transparent; /* 평소엔 밑줄 숨김 */
-    padding: 10px 20px; 
+    border-bottom: 3px solid transparent; 
+    padding: 10px 10px; 
     cursor: pointer; 
     font-size: 1.2em; 
     font-weight: bold; 
-    color: #555; /* 평소 글씨색은 차분하게 */
+    color: #555; 
     transition: 0.2s;
   }
   .tablink:hover { color: #000; }
-  /* 선택된 탭: 파란 배경 대신 세련된 파란색 밑줄과 글씨색 포인트 */
   .tablink.active-tab { 
     color: #007bff; 
     border-bottom: 3px solid #007bff; 
@@ -35,15 +41,15 @@ author_profile: true
   @keyframes fadeEffect { from {opacity: 0;} to {opacity: 1;} }
 </style>
 
-<!-- 1. 대분류: 탭 버튼들 (순서 변경 및 스크립트 오류 방지용 this 전달) -->
+<!-- 1. 대분류: 탭 버튼들 (onclick 대신 data-tab 속성으로 우회) -->
 <div class="tab-buttons">
-  <button class="tablink active-tab" onclick="openTab(this, 'Conference')">Conference</button>
-  <button class="tablink" onclick="openTab(this, 'Workshop')">Workshop</button>
-  <button class="tablink" onclick="openTab(this, 'Seminar')">Seminar</button>
+  <button class="tablink active-tab" data-tab="Conference">Conference</button>
+  <button class="tablink" data-tab="Workshop">Workshop</button>
+  <button class="tablink" data-tab="Seminar">Seminar</button>
 </div>
 
 <!-- ========================================== -->
-<!-- 2. 내용: CONFERENCE 섹션 (기본적으로 열려있음) -->
+<!-- 2. 내용: CONFERENCE 섹션 -->
 <!-- ========================================== -->
 <div id="Conference" class="talk-category" style="display: block;">
   <details open>
@@ -51,7 +57,7 @@ author_profile: true
     <ul>
     {% for talk in site.talks %}
       {% if talk.talk_type == 'conference' and talk.talk_scope == 'international' %}
-        <li>{{ talk.title }} <a href="{{ talk.url }}" style="font-weight: bold; font-size: 0.8em;">[detail]</a></li>
+        <li>{{ talk.title }} <a href="{{ talk.url }}" style="font-weight: bold;">[detail]</a></li>
       {% endif %}
     {% endfor %}
     </ul>
@@ -62,7 +68,7 @@ author_profile: true
     <ul>
     {% for talk in site.talks %}
       {% if talk.talk_type == 'conference' and talk.talk_scope == 'domestic' %}
-        <li>{{ talk.title }} <a href="{{ talk.url }}" style="font-weight: bold; font-size: 0.8em;">[detail]</a></li>
+        <li>{{ talk.title }} <a href="{{ talk.url }}" style="font-weight: bold;">[detail]</a></li>
       {% endif %}
     {% endfor %}
     </ul>
@@ -78,7 +84,7 @@ author_profile: true
     <ul>
     {% for talk in site.talks %}
       {% if talk.talk_type == 'workshop' and talk.talk_scope == 'international' %}
-        <li>{{ talk.title }} <a href="{{ talk.url }}" style="font-weight: bold; font-size: 0.8em;">[detail]</a></li>
+        <li>{{ talk.title }} <a href="{{ talk.url }}" style="font-weight: bold;">[detail]</a></li>
       {% endif %}
     {% endfor %}
     </ul>
@@ -89,7 +95,7 @@ author_profile: true
     <ul>
     {% for talk in site.talks %}
       {% if talk.talk_type == 'workshop' and talk.talk_scope == 'domestic' %}
-        <li>{{ talk.title }} <a href="{{ talk.url }}" style="font-weight: bold; font-size: 0.8em;">[detail]</a></li>
+        <li>{{ talk.title }} <a href="{{ talk.url }}" style="font-weight: bold;">[detail]</a></li>
       {% endif %}
     {% endfor %}
     </ul>
@@ -105,7 +111,7 @@ author_profile: true
     <ul>
     {% for talk in site.talks %}
       {% if talk.talk_type == 'seminar' and talk.talk_scope == 'international' %}
-        <li>{{ talk.title }} <a href="{{ talk.url }}" style="font-weight: bold; font-size: 0.8em;">[detail]</a></li>
+        <li>{{ talk.title }} <a href="{{ talk.url }}" style="font-weight: bold;">[detail]</a></li>
       {% endif %}
     {% endfor %}
     </ul>
@@ -116,32 +122,37 @@ author_profile: true
     <ul>
     {% for talk in site.talks %}
       {% if talk.talk_type == 'seminar' and talk.talk_scope == 'domestic' %}
-        <li>{{ talk.title }} <a href="{{ talk.url }}" style="font-weight: bold; font-size: 0.8em;">[detail]</a></li>
+        <li>{{ talk.title }} <a href="{{ talk.url }}" style="font-weight: bold;">[detail]</a></li>
       {% endif %}
     {% endfor %}
     </ul>
   </details>
 </div>
 
-<!-- 5. 탭 작동을 위한 자바스크립트 -->
+<!-- 5. 깃허브 엔진을 우회하는 안전한 자바스크립트 -->
 <script>
-function openTab(btn, tabName) {
-  var i, x, tablinks;
+document.addEventListener('DOMContentLoaded', function() {
+  var tablinks = document.querySelectorAll('.tablink');
   
-  // 1. 모든 내용 숨기기
-  x = document.getElementsByClassName("talk-category");
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";
-  }
-  
-  // 2. 모든 버튼에서 '활성화' 흔적 지우기
-  tablinks = document.getElementsByClassName("tablink");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active-tab", "");
-  }
-  
-  // 3. 클릭한 탭 내용만 보여주고, 클릭한 버튼 아래에만 포인트 밑줄 주기
-  document.getElementById(tabName).style.display = "block";
-  btn.className += " active-tab";
-}
+  tablinks.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var tabName = this.getAttribute('data-tab');
+      
+      // 1. 모든 내용 숨기기
+      var x = document.getElementsByClassName("talk-category");
+      for (var i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+      }
+      
+      // 2. 모든 버튼에서 밑줄(활성화 표시) 제거
+      for (var i = 0; i < tablinks.length; i++) {
+        tablinks[i].classList.remove("active-tab");
+      }
+      
+      // 3. 클릭한 탭의 내용만 보여주고, 클릭한 버튼에 밑줄 긋기
+      document.getElementById(tabName).style.display = "block";
+      this.classList.add("active-tab");
+    });
+  });
+});
 </script>
