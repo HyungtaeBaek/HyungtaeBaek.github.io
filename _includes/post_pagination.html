@@ -1,16 +1,15 @@
-{% include base_path %}
-
-{% if page.previous or page.next %}
-  <nav class="pagination">
-    {% if page.previous %}
-      <a href="{{ base_path }}{{ page.previous.url }}" class="pagination--pager" title="{{ page.previous.title | markdownify | strip_html }}">{{ site.data.ui-text[site.locale].pagination_previous | default: "Previous" }}</a>
-    {% else %}
-      <a href="#" class="pagination--pager disabled">{{ site.data.ui-text[site.locale].pagination_previous | default: "Previous" }}</a>
-    {% endif %}
-    {% if page.next %}
-      <a href="{{ base_path }}{{ page.next.url }}" class="pagination--pager" title="{{ page.next.title | markdownify | strip_html }}">{{ site.data.ui-text[site.locale].pagination_next | default: "Next" }}</a>
-    {% else %}
-      <a href="#" class="pagination--pager disabled">{{ site.data.ui-text[site.locale].pagination_next | default: "Next" }}</a>
-    {% endif %}
-  </nav>
-{% endif %}
+<nav class="pagination">
+  {% if page.collection == 'papers' %}
+    <a href="{{ '/papers/' | relative_url }}" class="pagination--pager" style="display: block; width: 100%; text-align: center; font-weight: bold; padding: 15px;">
+      목록으로 돌아가기 (Back to Papers)
+    </a>
+  {% elsif page.collection == 'talks' %}
+    <a href="{{ '/talks/' | relative_url }}" class="pagination--pager" style="display: block; width: 100%; text-align: center; font-weight: bold; padding: 15px;">
+      목록으로 돌아가기 (Back to Talks)
+    </a>
+  {% else %}
+    <a href="javascript:history.back()" class="pagination--pager" style="display: block; width: 100%; text-align: center; font-weight: bold; padding: 15px;">
+      이전 페이지로 돌아가기 (Go Back)
+    </a>
+  {% endif %}
+</nav>
