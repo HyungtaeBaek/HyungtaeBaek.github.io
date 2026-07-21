@@ -21,13 +21,12 @@ author_profile: true
   {% for post in site.papers %}
     {% if post.paper_status == 'published' %}
       <li>
-        <a href="{{ post.url }}">
-          {% if post.citation %}
-            {{ post.citation }}
-          {% else %}
-            {{ post.title }}
-          {% endif %}
-        </a>
+        {% if post.citation %}
+          {{ post.citation }}
+        {% else %}
+          {{ post.title }}
+        {% endif %}
+        <a href="{{ post.url }}" style="font-size: 0.8em; font-weight: normal;">[detail]</a>
       </li>
     {% endif %}
   {% endfor %}
@@ -40,13 +39,12 @@ author_profile: true
   {% for post in site.papers %}
     {% if post.paper_status == 'accepted' %}
       <li>
-        <a href="{{ post.url }}">
-          {% if post.citation %}
-            {{ post.citation }}
-          {% else %}
-            {{ post.title }}
-          {% endif %}
-        </a>
+        {% if post.citation %}
+          {{ post.citation }}
+        {% else %}
+          {{ post.title }}
+        {% endif %}
+        <a href="{{ post.url }}" style="font-size: 0.8em; font-weight: normal;">[detail]</a>
       </li>
     {% endif %}
   {% endfor %}
@@ -59,13 +57,12 @@ author_profile: true
   {% for post in site.papers %}
     {% if post.paper_status == 'submitted' %}
       <li>
-        <a href="{{ post.url }}">
-          {% if post.citation %}
-            {{ post.citation }}
-          {% else %}
-            {{ post.title }}
-          {% endif %}
-        </a>
+        {% if post.citation %}
+          {{ post.citation }}
+        {% else %}
+          {{ post.title }}
+        {% endif %}
+        <a href="{{ post.url }}" style="font-size: 0.8em; font-weight: normal;">[detail]</a>
       </li>
     {% endif %}
   {% endfor %}
