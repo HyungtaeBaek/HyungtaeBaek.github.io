@@ -4,7 +4,16 @@ title: "Papers"
 permalink: /papers/
 author_profile: true
 ---
-
+<style>
+  /* 상단 네비게이션 현재 페이지 클릭 막힘 강제 해제 (최상위 우선순위) */
+  #site-nav .masthead__menu-item.active a,
+  #site-nav .masthead__menu-item--active a,
+  .masthead__menu-item.active a,
+  .masthead__menu-item--active a {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+  }
+</style>
 <!-- MathJax 설정: 목록 페이지에서도 $ 기호가 수식으로 변환되도록 스위치 켜기 -->
 <script>
   MathJax = {
@@ -68,3 +77,4 @@ author_profile: true
   {% endfor %}
   </ul>
 </details>
+
