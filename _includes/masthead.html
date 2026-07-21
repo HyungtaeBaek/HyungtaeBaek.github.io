@@ -5,8 +5,9 @@
       <nav id="site-nav" class="greedy-nav">
         <button><span class="navicon"></span></button>
         <ul class="visible-links">
+          <!-- 1. 좌측 상단 사이트 로고/타이틀 부분 클릭 잠금 해제 -->
           <li class="masthead__menu-item masthead__menu-item--lg persist {% if page.url == '/' or page.url == '/index.html' %}selected{% endif %}">
-            <a href="{{ base_path }}/">{{ site.title }}</a>
+            <a href="{{ base_path }}/" style="pointer-events: auto !important; cursor: pointer !important;">{{ site.title }}</a>
           </li>
           {% for link in site.data.navigation.main %}
             {% if link.url contains 'http' %}
@@ -14,8 +15,9 @@
             {% else %}
               {% assign domain = base_path %}
             {% endif %}
+            <!-- 2. Papers, Talks 등 메인 메뉴 부분 클릭 잠금 해제 -->
             <li class="masthead__menu-item {% if page.url contains link.url and link.url != '/' %}selected{% endif %}">
-              <a href="{{ domain }}{{ link.url }}">{{ link.title }}</a>
+              <a href="{{ domain }}{{ link.url }}" style="pointer-events: auto !important; cursor: pointer !important;">{{ link.title }}</a>
             </li>
           {% endfor %}
           <li id="theme-toggle" class="masthead__menu-item persist tail">
