@@ -1,15 +1,15 @@
 <nav class="pagination">
   {% if page.collection == 'papers' %}
     <a href="{{ '/papers/' | relative_url }}" class="pagination--pager" style="display: block; width: 100%; text-align: center; font-weight: bold; padding: 15px;">
-      목록으로 돌아가기 (Back to Papers)
+      Back to Papers
     </a>
   {% elsif page.collection == 'talks' %}
     <a href="{{ '/talks/' | relative_url }}" class="pagination--pager" style="display: block; width: 100%; text-align: center; font-weight: bold; padding: 15px;">
-      목록으로 돌아가기 (Back to Talks)
+      Back to Talks
     </a>
   {% else %}
     <a href="javascript:history.back()" class="pagination--pager" style="display: block; width: 100%; text-align: center; font-weight: bold; padding: 15px;">
-      이전 페이지로 돌아가기 (Go Back)
+      Go Back
     </a>
   {% endif %}
 </nav>
