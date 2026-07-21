@@ -13,11 +13,11 @@ author_profile: true
     pointer-events: auto !important;
   }
 
-  /* --- 2. 탭 디자인 (간격 시원하게 확장) --- */
+  /* --- 2. 탭 디자인 (간격 40px로 시원하게 확장) --- */
   .tab-buttons { 
     display: flex; 
     justify-content: center; 
-    gap: 40px; /* ★ 기존 10px에서 40px로 4배 넓혔습니다 */
+    gap: 40px; 
     margin-bottom: 25px; 
     border-bottom: 1px solid #ddd; 
   }
@@ -41,11 +41,11 @@ author_profile: true
   @keyframes fadeEffect { from {opacity: 0;} to {opacity: 1;} }
 </style>
 
-<!-- 1. 대분류: 탭 버튼들 (onclick 대신 data-tab 속성으로 우회) -->
+<!-- 1. 대분류: 탭 버튼들 (고유 ID와 직접 실행 함수 부여) -->
 <div class="tab-buttons">
-  <button class="tablink active-tab" data-tab="Conference">Conference</button>
-  <button class="tablink" data-tab="Workshop">Workshop</button>
-  <button class="tablink" data-tab="Seminar">Seminar</button>
+  <button id="btn-Conference" class="tablink active-tab" onclick="switchTab('Conference')">Conference</button>
+  <button id="btn-Workshop" class="tablink" onclick="switchTab('Workshop')">Workshop</button>
+  <button id="btn-Seminar" class="tablink" onclick="switchTab('Seminar')">Seminar</button>
 </div>
 
 <!-- ========================================== -->
@@ -129,30 +129,23 @@ author_profile: true
   </details>
 </div>
 
-<!-- 5. 깃허브 엔진을 우회하는 안전한 자바스크립트 -->
+<!-- 5. 환경을 타지 않는 절대적인 자바스크립트 -->
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  var tablinks = document.querySelectorAll('.tablink');
-  
-  tablinks.forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      var tabName = this.getAttribute('data-tab');
-      
-      // 1. 모든 내용 숨기기
-      var x = document.getElementsByClassName("talk-category");
-      for (var i = 0; i < x.length; i++) {
-        x[i].style.display = "none";
-      }
-      
-      // 2. 모든 버튼에서 밑줄(활성화 표시) 제거
-      for (var i = 0; i < tablinks.length; i++) {
-        tablinks[i].classList.remove("active-tab");
-      }
-      
-      // 3. 클릭한 탭의 내용만 보여주고, 클릭한 버튼에 밑줄 긋기
-      document.getElementById(tabName).style.display = "block";
-      this.classList.add("active-tab");
-    });
-  });
-});
+  function switchTab(tabName) {
+    // 1. 모든 카테고리 숨기기
+    var categories = document.getElementsByClassName("talk-category");
+    for (var i = 0; i < categories.length; i++) {
+      categories[i].style.display = "none";
+    }
+    
+    // 2. 모든 버튼의 파란 밑줄 지우기
+    var buttons = document.getElementsByClassName("tablink");
+    for (var j = 0; j < buttons.length; j++) {
+      buttons[j].classList.remove("active-tab");
+    }
+    
+    // 3. 누른 탭만 보여주고, 누른 버튼에 파란 밑줄 긋기
+    document.getElementById(tabName).style.display = "block";
+    document.getElementById("btn-" + tabName).classList.add("active-tab");
+  }
 </script>
