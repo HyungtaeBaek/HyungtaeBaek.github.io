@@ -37,9 +37,3 @@
     "layout/sidebar",
     "layout/json_cv"
 ;
-#site-nav .masthead__menu-item.active a,
-#site-nav .masthead__menu-item--active a,
-#site-nav .masthead__menu-item a.active {
-  pointer-events: auto !important;
-  cursor: pointer !important;
-}
