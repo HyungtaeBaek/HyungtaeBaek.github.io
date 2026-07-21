@@ -1,16 +1,132 @@
 ---
 layout: archive
-title: "Talks and presentations"
+title: "Talks"
 permalink: /talks/
 author_profile: true
 ---
 
-{% if site.talkmap_link == true %}
+<!-- 탭 버튼을 예쁘게 꾸며주는 CSS 디자인 -->
+<style>
+  .tab-buttons { margin-bottom: 20px; border-bottom: 2px solid #ccc; padding-bottom: 10px; }
+  .tablink {
+    background-color: #f8f9fa; border: 1px solid #ddd; padding: 10px 20px; margin-right: 5px;
+    cursor: pointer; font-size: 1.1em; font-weight: bold; border-radius: 5px 5px 0 0;
+    transition: 0.3s;
+  }
+  .tablink:hover { background-color: #e2e6ea; }
+  .active-tab { background-color: #007bff; color: white; border-color: #007bff; }
+  .active-tab:hover { background-color: #0056b3; }
+  .talk-category { display: none; animation: fadeEffect 0.5s; }
+  @keyframes fadeEffect { from {opacity: 0;} to {opacity: 1;} }
+</style>
 
-<p style="text-decoration:underline;"><a href="/talkmap.html">See a map of all the places I've given a talk!</a></p>
+<!-- 1. 대분류: 탭 버튼들 -->
+<div class="tab-buttons">
+  <button class="tablink active-tab" onclick="openTab(event, 'Conference')">Conference</button>
+  <button class="tablink" onclick="openTab(event, 'Seminar')">Seminar</button>
+  <button class="tablink" onclick="openTab(event, 'Workshop')">Workshop</button>
+</div>
 
-{% endif %}
+<!-- ========================================== -->
+<!-- 2. 내용: CONFERENCE 섹션 (기본적으로 열려있음) -->
+<!-- ========================================== -->
+<div id="Conference" class="talk-category" style="display: block;">
+  <details open>
+    <summary style="font-size: 1.5em; font-weight: bold; cursor: pointer; margin-bottom: 0.5em;">International</summary>
+    <ul>
+    {% for talk in site.talks %}
+      {% if talk.talk_type == 'conference' and talk.talk_scope == 'international' %}
+        <li>{{ talk.title }} <a href="{{ talk.url }}" style="font-weight: bold; font-size: 0.8em;">[detail]</a></li>
+      {% endif %}
+    {% endfor %}
+    </ul>
+  </details>
 
-{% for post in site.talks reversed %}
-  {% include archive-single-talk.html %}
-{% endfor %}
+  <details>
+    <summary style="font-size: 1.5em; font-weight: bold; cursor: pointer; margin-bottom: 0.5em;">Domestic</summary>
+    <ul>
+    {% for talk in site.talks %}
+      {% if talk.talk_type == 'conference' and talk.talk_scope == 'domestic' %}
+        <li>{{ talk.title }} <a href="{{ talk.url }}" style="font-weight: bold; font-size: 0.8em;">[detail]</a></li>
+      {% endif %}
+    {% endfor %}
+    </ul>
+  </details>
+</div>
+
+<!-- ========================================== -->
+<!-- 3. 내용: SEMINAR 섹션 -->
+<!-- ========================================== -->
+<div id="Seminar" class="talk-category">
+  <details open>
+    <summary style="font-size: 1.5em; font-weight: bold; cursor: pointer; margin-bottom: 0.5em;">International</summary>
+    <ul>
+    {% for talk in site.talks %}
+      {% if talk.talk_type == 'seminar' and talk.talk_scope == 'international' %}
+        <li>{{ talk.title }} <a href="{{ talk.url }}" style="font-weight: bold; font-size: 0.8em;">[detail]</a></li>
+      {% endif %}
+    {% endfor %}
+    </ul>
+  </details>
+
+  <details>
+    <summary style="font-size: 1.5em; font-weight: bold; cursor: pointer; margin-bottom: 0.5em;">Domestic</summary>
+    <ul>
+    {% for talk in site.talks %}
+      {% if talk.talk_type == 'seminar' and talk.talk_scope == 'domestic' %}
+        <li>{{ talk.title }} <a href="{{ talk.url }}" style="font-weight: bold; font-size: 0.8em;">[detail]</a></li>
+      {% endif %}
+    {% endfor %}
+    </ul>
+  </details>
+</div>
+
+<!-- ========================================== -->
+<!-- 4. 내용: WORKSHOP 섹션 -->
+<!-- ========================================== -->
+<div id="Workshop" class="talk-category">
+  <details open>
+    <summary style="font-size: 1.5em; font-weight: bold; cursor: pointer; margin-bottom: 0.5em;">International</summary>
+    <ul>
+    {% for talk in site.talks %}
+      {% if talk.talk_type == 'workshop' and talk.talk_scope == 'international' %}
+        <li>{{ talk.title }} <a href="{{ talk.url }}" style="font-weight: bold; font-size: 0.8em;">[detail]</a></li>
+      {% endif %}
+    {% endfor %}
+    </ul>
+  </details>
+
+  <details>
+    <summary style="font-size: 1.5em; font-weight: bold; cursor: pointer; margin-bottom: 0.5em;">Domestic</summary>
+    <ul>
+    {% for talk in site.talks %}
+      {% if talk.talk_type == 'workshop' and talk.talk_scope == 'domestic' %}
+        <li>{{ talk.title }} <a href="{{ talk.url }}" style="font-weight: bold; font-size: 0.8em;">[detail]</a></li>
+      {% endif %}
+    {% endfor %}
+    </ul>
+  </details>
+</div>
+
+<!-- 5. 탭 작동을 위한 자바스크립트 -->
+<script>
+function openTab(evt, tabName) {
+  var i, x, tablinks;
+  
+  // 1. 모든 내용 숨기기
+  x = document.getElementsByClassName("talk-category");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  
+  // 2. 모든 버튼에서 '활성화' 색상(파란색) 빼기
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active-tab", "");
+  }
+  
+  // 3. 클릭한 탭 내용만 보여주고, 클릭한 버튼 파랗게 만들기
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.className += " active-tab";
+}
+</script>
