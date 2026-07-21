@@ -5,26 +5,41 @@ permalink: /talks/
 author_profile: true
 ---
 
-<!-- 탭 버튼을 예쁘게 꾸며주는 CSS 디자인 -->
+<!-- 탭 버튼을 세련되게 꾸며주는 CSS 디자인 -->
 <style>
-  .tab-buttons { margin-bottom: 20px; border-bottom: 2px solid #ccc; padding-bottom: 10px; }
-  .tablink {
-    background-color: #f8f9fa; border: 1px solid #ddd; padding: 10px 20px; margin-right: 5px;
-    cursor: pointer; font-size: 1.1em; font-weight: bold; border-radius: 5px 5px 0 0;
-    transition: 0.3s;
+  .tab-buttons { 
+    display: flex; 
+    justify-content: center; /* 버튼들을 가운데로 예쁘게 모아줌 */
+    gap: 10px; /* 버튼 사이 간격 */
+    margin-bottom: 25px; 
+    border-bottom: 1px solid #ddd; 
   }
-  .tablink:hover { background-color: #e2e6ea; }
-  .active-tab { background-color: #007bff; color: white; border-color: #007bff; }
-  .active-tab:hover { background-color: #0056b3; }
+  .tablink {
+    background-color: transparent; 
+    border: none; 
+    border-bottom: 3px solid transparent; /* 평소엔 밑줄 숨김 */
+    padding: 10px 20px; 
+    cursor: pointer; 
+    font-size: 1.2em; 
+    font-weight: bold; 
+    color: #555; /* 평소 글씨색은 차분하게 */
+    transition: 0.2s;
+  }
+  .tablink:hover { color: #000; }
+  /* 선택된 탭: 파란 배경 대신 세련된 파란색 밑줄과 글씨색 포인트 */
+  .tablink.active-tab { 
+    color: #007bff; 
+    border-bottom: 3px solid #007bff; 
+  }
   .talk-category { display: none; animation: fadeEffect 0.5s; }
   @keyframes fadeEffect { from {opacity: 0;} to {opacity: 1;} }
 </style>
 
-<!-- 1. 대분류: 탭 버튼들 -->
+<!-- 1. 대분류: 탭 버튼들 (순서 변경 및 스크립트 오류 방지용 this 전달) -->
 <div class="tab-buttons">
-  <button class="tablink active-tab" onclick="openTab(event, 'Conference')">Conference</button>
-  <button class="tablink" onclick="openTab(event, 'Seminar')">Seminar</button>
-  <button class="tablink" onclick="openTab(event, 'Workshop')">Workshop</button>
+  <button class="tablink active-tab" onclick="openTab(this, 'Conference')">Conference</button>
+  <button class="tablink" onclick="openTab(this, 'Workshop')">Workshop</button>
+  <button class="tablink" onclick="openTab(this, 'Seminar')">Seminar</button>
 </div>
 
 <!-- ========================================== -->
@@ -55,34 +70,7 @@ author_profile: true
 </div>
 
 <!-- ========================================== -->
-<!-- 3. 내용: SEMINAR 섹션 -->
-<!-- ========================================== -->
-<div id="Seminar" class="talk-category">
-  <details open>
-    <summary style="font-size: 1.5em; font-weight: bold; cursor: pointer; margin-bottom: 0.5em;">International</summary>
-    <ul>
-    {% for talk in site.talks %}
-      {% if talk.talk_type == 'seminar' and talk.talk_scope == 'international' %}
-        <li>{{ talk.title }} <a href="{{ talk.url }}" style="font-weight: bold; font-size: 0.8em;">[detail]</a></li>
-      {% endif %}
-    {% endfor %}
-    </ul>
-  </details>
-
-  <details>
-    <summary style="font-size: 1.5em; font-weight: bold; cursor: pointer; margin-bottom: 0.5em;">Domestic</summary>
-    <ul>
-    {% for talk in site.talks %}
-      {% if talk.talk_type == 'seminar' and talk.talk_scope == 'domestic' %}
-        <li>{{ talk.title }} <a href="{{ talk.url }}" style="font-weight: bold; font-size: 0.8em;">[detail]</a></li>
-      {% endif %}
-    {% endfor %}
-    </ul>
-  </details>
-</div>
-
-<!-- ========================================== -->
-<!-- 4. 내용: WORKSHOP 섹션 -->
+<!-- 3. 내용: WORKSHOP 섹션 -->
 <!-- ========================================== -->
 <div id="Workshop" class="talk-category">
   <details open>
@@ -108,9 +96,36 @@ author_profile: true
   </details>
 </div>
 
+<!-- ========================================== -->
+<!-- 4. 내용: SEMINAR 섹션 -->
+<!-- ========================================== -->
+<div id="Seminar" class="talk-category">
+  <details open>
+    <summary style="font-size: 1.5em; font-weight: bold; cursor: pointer; margin-bottom: 0.5em;">International</summary>
+    <ul>
+    {% for talk in site.talks %}
+      {% if talk.talk_type == 'seminar' and talk.talk_scope == 'international' %}
+        <li>{{ talk.title }} <a href="{{ talk.url }}" style="font-weight: bold; font-size: 0.8em;">[detail]</a></li>
+      {% endif %}
+    {% endfor %}
+    </ul>
+  </details>
+
+  <details>
+    <summary style="font-size: 1.5em; font-weight: bold; cursor: pointer; margin-bottom: 0.5em;">Domestic</summary>
+    <ul>
+    {% for talk in site.talks %}
+      {% if talk.talk_type == 'seminar' and talk.talk_scope == 'domestic' %}
+        <li>{{ talk.title }} <a href="{{ talk.url }}" style="font-weight: bold; font-size: 0.8em;">[detail]</a></li>
+      {% endif %}
+    {% endfor %}
+    </ul>
+  </details>
+</div>
+
 <!-- 5. 탭 작동을 위한 자바스크립트 -->
 <script>
-function openTab(evt, tabName) {
+function openTab(btn, tabName) {
   var i, x, tablinks;
   
   // 1. 모든 내용 숨기기
@@ -119,14 +134,14 @@ function openTab(evt, tabName) {
     x[i].style.display = "none";
   }
   
-  // 2. 모든 버튼에서 '활성화' 색상(파란색) 빼기
+  // 2. 모든 버튼에서 '활성화' 흔적 지우기
   tablinks = document.getElementsByClassName("tablink");
   for (i = 0; i < tablinks.length; i++) {
     tablinks[i].className = tablinks[i].className.replace(" active-tab", "");
   }
   
-  // 3. 클릭한 탭 내용만 보여주고, 클릭한 버튼 파랗게 만들기
+  // 3. 클릭한 탭 내용만 보여주고, 클릭한 버튼 아래에만 포인트 밑줄 주기
   document.getElementById(tabName).style.display = "block";
-  evt.currentTarget.className += " active-tab";
+  btn.className += " active-tab";
 }
 </script>
