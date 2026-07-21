@@ -5,53 +5,60 @@ permalink: /talks/
 author_profile: true
 ---
 
-<!-- 디자인 및 레이아웃 설정 -->
+<!-- CSS 스타일: 탭 레이아웃 및 간격 조정 -->
 <style>
-  /* --- 1. 상단 네비게이션 현재 페이지 클릭 막힘 해결 --- */
+  /* 상단 메뉴 현재 페이지 클릭 방지 해제 */
   li.active a, .active a, .masthead__menu-item.active a {
     cursor: pointer !important;
     pointer-events: auto !important;
   }
 
-  /* --- 2. 탭 디자인 (간격 40px 확장) --- */
-  .tab-buttons { 
-    display: flex; 
-    justify-content: center; 
-    gap: 40px; 
-    margin-bottom: 25px; 
-    border-bottom: 1px solid #ddd; 
+  .tab-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #ddd;
   }
-  .tablink {
-    background-color: transparent; 
-    border: none; 
-    border-bottom: 3px solid transparent; 
-    padding: 10px 10px; 
-    cursor: pointer; 
-    font-size: 1.2em; 
-    font-weight: bold; 
-    color: #555; 
-    transition: 0.2s;
+  
+  .tab-btn {
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    padding: 10px 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #555;
+    cursor: pointer;
   }
-  .tablink:hover { color: #000; }
-  .tablink.active-tab { 
-    color: #007bff; 
-    border-bottom: 3px solid #007bff; 
+  
+  .tab-btn:hover {
+    color: #000;
   }
-  .talk-category { display: none; animation: fadeEffect 0.5s; }
-  @keyframes fadeEffect { from {opacity: 0;} to {opacity: 1;} }
+
+  .tab-btn.active {
+    color: #007bff;
+    border-bottom: 3px solid #007bff;
+  }
+
+  .tab-content {
+    display: none;
+  }
+
+  .tab-content.active {
+    display: block;
+  }
 </style>
 
-<!-- 1. 대분류: 탭 버튼들 (onclick 삭제, data-tab 속성만 남김) -->
-<div class="tab-buttons">
-  <button class="tablink active-tab" data-tab="Conference">Conference</button>
-  <button class="tablink" data-tab="Workshop">Workshop</button>
-  <button class="tablink" data-tab="Seminar">Seminar</button>
+<!-- 탭 버튼 영역 -->
+<div class="tab-container">
+  <button class="tab-btn active" onclick="switchTab(event, 'content-conference')">Conference</button>
+  <button class="tab-btn" onclick="switchTab(event, 'content-workshop')">Workshop</button>
+  <button class="tab-btn" onclick="switchTab(event, 'content-seminar')">Seminar</button>
 </div>
 
-<!-- ========================================== -->
-<!-- 2. 내용: CONFERENCE 섹션 -->
-<!-- ========================================== -->
-<div id="Conference" class="talk-category" style="display: block;">
+<!-- 1. Conference 내용 -->
+<div id="content-conference" class="tab-content active">
   <details open>
     <summary style="font-size: 1.5em; font-weight: bold; cursor: pointer; margin-bottom: 0.5em;">International</summary>
     <ul>
@@ -74,10 +81,8 @@ author_profile: true
   </details>
 </div>
 
-<!-- ========================================== -->
-<!-- 3. 내용: WORKSHOP 섹션 -->
-<!-- ========================================== -->
-<div id="Workshop" class="talk-category">
+<!-- 2. Workshop 내용 -->
+<div id="content-workshop" class="tab-content">
   <details open>
     <summary style="font-size: 1.5em; font-weight: bold; cursor: pointer; margin-bottom: 0.5em;">International</summary>
     <ul>
@@ -100,10 +105,8 @@ author_profile: true
   </details>
 </div>
 
-<!-- ========================================== -->
-<!-- 4. 내용: SEMINAR 섹션 -->
-<!-- ========================================== -->
-<div id="Seminar" class="talk-category">
+<!-- 3. Seminar 내용 -->
+<div id="content-seminar" class="tab-content">
   <details open>
     <summary style="font-size: 1.5em; font-weight: bold; cursor: pointer; margin-bottom: 0.5em;">International</summary>
     <ul>
@@ -126,29 +129,20 @@ author_profile: true
   </details>
 </div>
 
-<!-- 5. 깃허브 엔진이 지우지 못하는 절대 이벤트 감지 스크립트 -->
+<!-- 인라인 자바스크립트: 버튼 클릭 시 active 클래스 제어 -->
 <script>
-  document.addEventListener('click', function(event) {
-    // 사용자가 클릭한 곳이 'tablink'라는 클래스를 가진 탭 버튼인지 확인
-    if (event.target.classList.contains('tablink')) {
-      var tabName = event.target.getAttribute('data-tab');
-      if (!tabName) return; // 엉뚱한 곳이면 무시
-      
-      // 1. 모든 카테고리 숨기기
-      var categories = document.getElementsByClassName("talk-category");
-      for (var i = 0; i < categories.length; i++) {
-        categories[i].style.display = "none";
-      }
-      
-      // 2. 모든 버튼의 파란 밑줄 지우기
-      var buttons = document.getElementsByClassName("tablink");
-      for (var j = 0; j < buttons.length; j++) {
-        buttons[j].classList.remove("active-tab");
-      }
-      
-      // 3. 누른 탭만 보여주고, 누른 버튼에 파란 밑줄 긋기
-      document.getElementById(tabName).style.display = "block";
-      event.target.classList.add("active-tab");
+  function switchTab(evt, targetId) {
+    var contents = document.getElementsByClassName("tab-content");
+    for (var i = 0; i < contents.length; i++) {
+      contents[i].classList.remove("active");
     }
-  });
+    
+    var buttons = document.getElementsByClassName("tab-btn");
+    for (var j = 0; j < buttons.length; j++) {
+      buttons[j].classList.remove("active");
+    }
+    
+    document.getElementById(targetId).classList.add("active");
+    evt.currentTarget.classList.add("active");
+  }
 </script>
