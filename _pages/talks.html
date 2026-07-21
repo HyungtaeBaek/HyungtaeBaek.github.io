@@ -7,13 +7,13 @@ author_profile: true
 
 <!-- 디자인 및 레이아웃 설정 -->
 <style>
-  /* --- 1. 상단 네비게이션(메뉴) 현재 페이지 클릭 막힘 해결 --- */
+  /* --- 1. 상단 네비게이션 현재 페이지 클릭 막힘 해결 --- */
   li.active a, .active a, .masthead__menu-item.active a {
     cursor: pointer !important;
     pointer-events: auto !important;
   }
 
-  /* --- 2. 탭 디자인 (간격 40px로 시원하게 확장) --- */
+  /* --- 2. 탭 디자인 (간격 40px 확장) --- */
   .tab-buttons { 
     display: flex; 
     justify-content: center; 
@@ -41,11 +41,11 @@ author_profile: true
   @keyframes fadeEffect { from {opacity: 0;} to {opacity: 1;} }
 </style>
 
-<!-- 1. 대분류: 탭 버튼들 (고유 ID와 직접 실행 함수 부여) -->
+<!-- 1. 대분류: 탭 버튼들 (onclick 삭제, data-tab 속성만 남김) -->
 <div class="tab-buttons">
-  <button id="btn-Conference" class="tablink active-tab" onclick="switchTab('Conference')">Conference</button>
-  <button id="btn-Workshop" class="tablink" onclick="switchTab('Workshop')">Workshop</button>
-  <button id="btn-Seminar" class="tablink" onclick="switchTab('Seminar')">Seminar</button>
+  <button class="tablink active-tab" data-tab="Conference">Conference</button>
+  <button class="tablink" data-tab="Workshop">Workshop</button>
+  <button class="tablink" data-tab="Seminar">Seminar</button>
 </div>
 
 <!-- ========================================== -->
@@ -62,7 +62,6 @@ author_profile: true
     {% endfor %}
     </ul>
   </details>
-
   <details>
     <summary style="font-size: 1.5em; font-weight: bold; cursor: pointer; margin-bottom: 0.5em;">Domestic</summary>
     <ul>
@@ -89,7 +88,6 @@ author_profile: true
     {% endfor %}
     </ul>
   </details>
-
   <details>
     <summary style="font-size: 1.5em; font-weight: bold; cursor: pointer; margin-bottom: 0.5em;">Domestic</summary>
     <ul>
@@ -116,7 +114,6 @@ author_profile: true
     {% endfor %}
     </ul>
   </details>
-
   <details>
     <summary style="font-size: 1.5em; font-weight: bold; cursor: pointer; margin-bottom: 0.5em;">Domestic</summary>
     <ul>
@@ -129,23 +126,29 @@ author_profile: true
   </details>
 </div>
 
-<!-- 5. 환경을 타지 않는 절대적인 자바스크립트 -->
+<!-- 5. 깃허브 엔진이 지우지 못하는 절대 이벤트 감지 스크립트 -->
 <script>
-  function switchTab(tabName) {
-    // 1. 모든 카테고리 숨기기
-    var categories = document.getElementsByClassName("talk-category");
-    for (var i = 0; i < categories.length; i++) {
-      categories[i].style.display = "none";
+  document.addEventListener('click', function(event) {
+    // 사용자가 클릭한 곳이 'tablink'라는 클래스를 가진 탭 버튼인지 확인
+    if (event.target.classList.contains('tablink')) {
+      var tabName = event.target.getAttribute('data-tab');
+      if (!tabName) return; // 엉뚱한 곳이면 무시
+      
+      // 1. 모든 카테고리 숨기기
+      var categories = document.getElementsByClassName("talk-category");
+      for (var i = 0; i < categories.length; i++) {
+        categories[i].style.display = "none";
+      }
+      
+      // 2. 모든 버튼의 파란 밑줄 지우기
+      var buttons = document.getElementsByClassName("tablink");
+      for (var j = 0; j < buttons.length; j++) {
+        buttons[j].classList.remove("active-tab");
+      }
+      
+      // 3. 누른 탭만 보여주고, 누른 버튼에 파란 밑줄 긋기
+      document.getElementById(tabName).style.display = "block";
+      event.target.classList.add("active-tab");
     }
-    
-    // 2. 모든 버튼의 파란 밑줄 지우기
-    var buttons = document.getElementsByClassName("tablink");
-    for (var j = 0; j < buttons.length; j++) {
-      buttons[j].classList.remove("active-tab");
-    }
-    
-    // 3. 누른 탭만 보여주고, 누른 버튼에 파란 밑줄 긋기
-    document.getElementById(tabName).style.display = "block";
-    document.getElementById("btn-" + tabName).classList.add("active-tab");
-  }
+  });
 </script>
