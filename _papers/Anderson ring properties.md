@@ -4,10 +4,10 @@ collection: papers
 paper_status: accepted
 permalink: /papers/Anderson-ring-first
 date: 2024-10-22
-venue: "arXiv"
+venue: "Accepted in Filomat, 2026"
 slidesurl: "https://arxiv.org/abs/2410.17007"
 paperurl: 
-citation: "<b>H. Baek</b>, J. W. Lim and A. Tamoussit, <i>On the transfer of certain ring-theoretic properties in Anderson rings</i>, arXiv:2410.17007 (2024), preprint."
+citation: "<b>H. Baek</b>, J. W. Lim and A. Tamoussit, <i>On the transfer of certain ring-theoretic properties in Anderson rings</i>, Filomat, in press (Accepted)."
 ---
 
 <!-- MathJax 설정: $ 기호로도 수식이 작동하게 만드는 마법의 스위치 -->
