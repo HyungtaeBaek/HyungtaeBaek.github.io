@@ -1,7 +1,7 @@
 ---
 title: "On the transfer of certain ring-theoretic properties in Anderson rings"
 collection: papers
-paper_status: submitted
+paper_status: accepted
 permalink: /papers/Anderson-ring-first
 date: 2024-10-22
 venue: "arXiv"
