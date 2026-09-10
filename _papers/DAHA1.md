@@ -1,5 +1,5 @@
 ---
-title: "On finite-dimensional multiplicity-free irreducible modules for a nil-DAHA of type $(C_1^\vee,C_1)$"
+title: "On finite-dimensional multiplicity-free irreducible modules for a nil-DAHA of type $(C_1^{\vee},C_1)$"
 collection: papers
 paper_status: submitted
 permalink: /papers/DAHA1
@@ -7,7 +7,7 @@ date: 2026-08-14
 venue: "arXiv"
 slidesurl: "https://arxiv.org/abs/2608.14299"
 paperurl: 
-citation: "J. Park, J.-H. Lee and <b>H. Baek</b>, <i>On finite-dimensional multiplicity-free irreducible modules for a nil-DAHA of type $(C_1^\vee,C_1)$</i>, arXiv:2608.14299 (2026), preprint."
+citation: "J. Park, J.-H. Lee and <b>H. Baek</b>, <i>On finite-dimensional multiplicity-free irreducible modules for a nil-DAHA of type $(C_1^{\vee},C_1)$</i>, arXiv:2608.14299 (2026), preprint."
 ---
 
 <!-- MathJax 설정: $ 기호로도 수식이 작동하게 만드는 마법의 스위치 -->
