@@ -3,8 +3,8 @@ title: "On the transfer of certain ring-theoretic properties in Anderson rings"
 collection: papers
 paper_status: accepted
 permalink: /papers/Anderson-ring-first
-date: 2024-10-22
-venue: "Accepted in Filomat, 2026"
+date: 2026-09-01
+venue: "Filomat"
 slidesurl: "https://arxiv.org/abs/2410.17007"
 paperurl: 
 citation: "<b>H. Baek</b>, J. W. Lim and A. Tamoussit, <i>On the transfer of certain ring-theoretic properties in Anderson rings</i>, Filomat, in press (Accepted)."
