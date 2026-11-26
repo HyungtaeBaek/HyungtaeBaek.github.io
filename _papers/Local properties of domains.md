@@ -8,6 +8,7 @@ venue: "arXiv"
 slidesurl: "https://arxiv.org/abs/2601.09565"
 paperurl: 
 citation: "<b>H. Baek</b>, J. W. Lim, O. Ouzzaouit and A. Tamoussit, <i>Local properties of integral domains under extensions and pullback constructions</i>, arXiv:2601.09565 (2026), preprint."
+bibtexurl: "/files/bibtex/baek2026local.bib"
 ---
 
 <!-- MathJax 설정: $ 기호로도 수식이 작동하게 만드는 마법의 스위치 -->

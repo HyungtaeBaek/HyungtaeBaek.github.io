@@ -7,6 +7,7 @@ date: 2024-11-19
 venue: "Rocky Mountain Journal of Mathematics"
 paperurl: "https://arxiv.org/abs/2311.01390"
 citation: "<b>H. Baek</b>, J. W. Lim, <i>On $S$-Noetherian modules and $S$-strong Mori modules</i>, Rocky Mountain J. Math., in press (Accepted)."
+bibtexurl: "/files/bibtex/baek-snoetherian-strongmori.bib"
 ---
 
 <!-- MathJax 설정: $ 기호로도 수식이 작동하게 만드는 마법의 스위치 -->

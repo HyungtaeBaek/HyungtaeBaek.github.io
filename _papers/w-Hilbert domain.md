@@ -8,6 +8,7 @@ venue: "arXiv"
 slidesurl: "https://arxiv.org/abs/2603.19692"
 paperurl: 
 citation: "<b>H. Baek</b>, <i>On $w$-Hilbert domains</i>, arXiv:2603.19692 (2026), preprint."
+bibtexurl: "/files/bibtex/baek2026whilbert.bib"
 ---
 
 <!-- MathJax 설정: $ 기호로도 수식이 작동하게 만드는 마법의 스위치 -->

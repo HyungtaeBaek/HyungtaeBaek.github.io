@@ -8,6 +8,7 @@ venue: "Communications in Algebra"
 slidesurl: "https://www.tandfonline.com/doi/full/10.1080/00927872.2025.2479132"
 paperurl: 
 citation: "<b>H. Baek</b>, H. S. Choi and J. W. Lim, <i>On $S$-$n$-absorbing ideals</i>, Comm. Alg. 53 (2025) 4191-4205."
+bibtexurl: "/files/bibtex/baek2025snabsorbing.bib"
 ---
 
 <!-- MathJax 설정: $ 기호로도 수식이 작동하게 만드는 마법의 스위치 -->
