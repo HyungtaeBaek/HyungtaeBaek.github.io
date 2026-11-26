@@ -89,7 +89,7 @@ atom_feed:
   path: ""
 
 # SEO Related
-google_site_verification: ""
+google_site_verification: "ydNymRPihNHh6-TkM82hHQeLSWs19lyJYMQWZH3mte0"
 bing_site_verification: ""
 alexa_site_verification: ""
 yandex_site_verification: ""
@@ -144,6 +144,35 @@ exclude:
   - README
   - tmp
   - vendor
+  # --- 템플릿 예시 콘텐츠 (사이트에 올라가지 않도록 제외) ---
+  - _posts
+  - _drafts
+  - _portfolio
+  - _teaching
+  - _pages/markdown.md
+  - _pages/non-menu-page.md
+  - _pages/archive-layout-with-content.md
+  - _pages/terms.md
+  - _pages/cv-json.md
+  - _pages/portfolio.html
+  - _pages/year-archive.html
+  - _pages/talkmap.html
+  - files/paper1.pdf
+  - files/paper2.pdf
+  - files/paper3.pdf
+  - files/slides1.pdf
+  - files/slides2.pdf
+  - files/slides3.pdf
+  - files/bibtex1.bib
+  - images/500x300.png
+  - images/editing-talk.png
+  - markdown_generator
+  - talkmap
+  - talkmap.py
+  - talkmap.ipynb
+  - talkmap_out.ipynb
+  - docker-compose.yaml
+  - _config_docker.yml
 keep_files:
   - .git
   - .svn
