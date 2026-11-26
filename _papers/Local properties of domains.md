@@ -5,7 +5,7 @@ paper_status: submitted
 permalink: /papers/Local-properties
 date: 2026-01-14
 venue: "arXiv"
-slidesurl: "https://arxiv.org/abs/2410.17007"
+slidesurl: "https://arxiv.org/abs/2601.09565"
 paperurl: 
 citation: "<b>H. Baek</b>, J. W. Lim, O. Ouzzaouit and A. Tamoussit, <i>Local properties of integral domains under extensions and pullback constructions</i>, arXiv:2601.09565 (2026), preprint."
 ---
