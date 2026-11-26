@@ -10,7 +10,7 @@ redirect_from:
 I am a postdoctoral researcher in the Department of Mathematics at Jeonbuk National University, Jeonju, Korea.
 I received my Ph.D. in Mathematics from Kyungpook National University in August 2026 under the supervision of Prof. Jung Wook Lim.
 
-My research lies in commutative algebra, mainly **multiplicative ideal theory**: Anderson rings, star-operations and $w$-Hilbert domains, and $S$-Noetherian-type conditions.
+My research lies in commutative algebra, mainly **multiplicative ideal theory**: in particular Anderson rings, star-operations and $w$-Hilbert domains.
 More recently, I have also been working on **representation theory**, in particular on modules over a nil-DAHA of type $(C_1^{\vee},C_1)$.
 More details can be found on the [Research](/research/) page.
 

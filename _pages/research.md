@@ -48,16 +48,6 @@ and on how local properties of integral domains behave under extensions and pull
 * On $w$-Hilbert domains, International Conference for the 80th Anniversary of the Korean Mathematical Society, Seoul, 2026
 * A new approach to $w$-operations inspired by Hilbert rings, 2026 KSCAM Conference, Jeju (Outstanding Presenter Award)
 
-$S$-Noetherian-type conditions
-======
-Given a multiplicative subset $S$ of a ring, many classical notions admit natural "$S$-versions" that are weaker but still well behaved.
-I studied $S$-Noetherian modules and $S$-strong Mori modules, including a Hilbert basis theorem for them,
-and introduced $S$-$n$-absorbing ideals, a common generalization of $S$-prime ideals and $n$-absorbing ideals.
-
-**Related papers**
-* [On $S$-Noetherian modules and $S$-strong Mori modules]({{ base_path }}/papers/s-noetherian-strong-mori) (with J. W. Lim), Rocky Mountain J. Math., in press
-* [On $S$-$n$-absorbing ideals]({{ base_path }}/papers/2025-10-31-s-n-absorbing) (with H. S. Choi and J. W. Lim), Comm. Algebra 53 (2025)
-
 Representation theory
 ======
 More recently, I have been working on the representation theory of a nil-DAHA of type $(C_1^{\vee},C_1)$.
