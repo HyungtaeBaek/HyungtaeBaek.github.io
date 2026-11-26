@@ -8,7 +8,7 @@ venue: "Filomat"
 slidesurl: 
 paperurl: "https://arxiv.org/abs/2410.17007"
 citation: "<b>H. Baek</b>, J. W. Lim and A. Tamoussit, <i>On the transfer of certain ring-theoretic properties in Anderson rings</i>, Filomat, in press (Accepted)."
-bibtexurl: "/files/bibtex/baek-andersonrings-transfer.bib"
+bibtexurl: "/files/baek-andersonrings-transfer.bib"
 ---
 
 <!-- MathJax 설정: $ 기호로도 수식이 작동하게 만드는 마법의 스위치 -->

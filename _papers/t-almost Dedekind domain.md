@@ -6,7 +6,7 @@ permalink: /papers/t-almost-dedekind
 date: 2026-03-17
 venue: "Filomat"
 citation: "H. Kim, <b>H. Baek</b> and H. Hamdi, <i>Characterizations of $t$-almost Dedekind domains via $w$-secondary modules</i>, Filomat, in press (Accepted)."
-bibtexurl: "/files/bibtex/kim-talmostdedekind.bib"
+bibtexurl: "/files/kim-talmostdedekind.bib"
 ---
 
 <!-- MathJax 설정: $ 기호로도 수식이 작동하게 만드는 마법의 스위치 -->

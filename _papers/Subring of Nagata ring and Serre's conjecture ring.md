@@ -8,7 +8,7 @@ venue: "arXiv"
 slidesurl: "https://arxiv.org/abs/2408.08758"
 paperurl: 
 citation: "<b>H. Baek</b> and J. W. Lim, <i>A special subring of the Nagata ring and the Serre’s conjecture ring</i>, arXiv:2408.08758 (2024), preprint."
-bibtexurl: "/files/bibtex/baek2024nagata.bib"
+bibtexurl: "/files/baek2024nagata.bib"
 ---
 
 <!-- MathJax 설정: $ 기호로도 수식이 작동하게 만드는 마법의 스위치 -->
