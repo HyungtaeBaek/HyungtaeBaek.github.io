@@ -70,9 +70,9 @@ author_profile: true
   <details open>
     <summary style="font-size: 1.5em; font-weight: bold; cursor: pointer; margin-bottom: 0.5em;">International</summary>
     <ul>
-    {% for talk in site.talks %}
+    {% for talk in site.talks reversed %}
       {% if talk.talk_type == 'conference' and talk.talk_scope == 'international' %}
-        <li>{{ talk.title }} <a href="{{ talk.url }}" style="font-weight: bold;">[detail]</a></li>
+        <li><b>{{ talk.title }}</b><br>{{ talk.venue }}, {{ talk.location }}, {{ talk.date | date: "%b %-d, %Y" }}</li>
       {% endif %}
     {% endfor %}
     </ul>
@@ -80,9 +80,9 @@ author_profile: true
   <details>
     <summary style="font-size: 1.5em; font-weight: bold; cursor: pointer; margin-bottom: 0.5em;">Domestic</summary>
     <ul>
-    {% for talk in site.talks %}
+    {% for talk in site.talks reversed %}
       {% if talk.talk_type == 'conference' and talk.talk_scope == 'domestic' %}
-        <li>{{ talk.title }} <a href="{{ talk.url }}" style="font-weight: bold;">[detail]</a></li>
+        <li><b>{{ talk.title }}</b><br>{{ talk.venue }}, {{ talk.location }}, {{ talk.date | date: "%b %-d, %Y" }}</li>
       {% endif %}
     {% endfor %}
     </ul>
@@ -94,9 +94,9 @@ author_profile: true
   <details open>
     <summary style="font-size: 1.5em; font-weight: bold; cursor: pointer; margin-bottom: 0.5em;">International</summary>
     <ul>
-    {% for talk in site.talks %}
+    {% for talk in site.talks reversed %}
       {% if talk.talk_type == 'workshop' and talk.talk_scope == 'international' %}
-        <li>{{ talk.title }} <a href="{{ talk.url }}" style="font-weight: bold;">[detail]</a></li>
+        <li><b>{{ talk.title }}</b><br>{{ talk.venue }}, {{ talk.location }}, {{ talk.date | date: "%b %-d, %Y" }}</li>
       {% endif %}
     {% endfor %}
     </ul>
@@ -104,9 +104,9 @@ author_profile: true
   <details>
     <summary style="font-size: 1.5em; font-weight: bold; cursor: pointer; margin-bottom: 0.5em;">Domestic</summary>
     <ul>
-    {% for talk in site.talks %}
+    {% for talk in site.talks reversed %}
       {% if talk.talk_type == 'workshop' and talk.talk_scope == 'domestic' %}
-        <li>{{ talk.title }} <a href="{{ talk.url }}" style="font-weight: bold;">[detail]</a></li>
+        <li><b>{{ talk.title }}</b><br>{{ talk.venue }}, {{ talk.location }}, {{ talk.date | date: "%b %-d, %Y" }}</li>
       {% endif %}
     {% endfor %}
     </ul>
@@ -118,9 +118,9 @@ author_profile: true
   <details open>
     <summary style="font-size: 1.5em; font-weight: bold; cursor: pointer; margin-bottom: 0.5em;">International</summary>
     <ul>
-    {% for talk in site.talks %}
+    {% for talk in site.talks reversed %}
       {% if talk.talk_type == 'seminar' and talk.talk_scope == 'international' %}
-        <li>{{ talk.title }} <a href="{{ talk.url }}" style="font-weight: bold;">[detail]</a></li>
+        <li><b>{{ talk.title }}</b><br>{{ talk.venue }}, {{ talk.location }}, {{ talk.date | date: "%b %-d, %Y" }}</li>
       {% endif %}
     {% endfor %}
     </ul>
@@ -128,9 +128,9 @@ author_profile: true
   <details>
     <summary style="font-size: 1.5em; font-weight: bold; cursor: pointer; margin-bottom: 0.5em;">Domestic</summary>
     <ul>
-    {% for talk in site.talks %}
+    {% for talk in site.talks reversed %}
       {% if talk.talk_type == 'seminar' and talk.talk_scope == 'domestic' %}
-        <li>{{ talk.title }} <a href="{{ talk.url }}" style="font-weight: bold;">[detail]</a></li>
+        <li><b>{{ talk.title }}</b><br>{{ talk.venue }}, {{ talk.location }}, {{ talk.date | date: "%b %-d, %Y" }}</li>
       {% endif %}
     {% endfor %}
     </ul>
