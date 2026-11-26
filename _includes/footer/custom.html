@@ -1,6 +1,14 @@
 <!-- start custom footer snippets -->
 
-<!-- Support for MathJax -->
-<script id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@4.0.0/tex-mml-chtml.js"></script>
+<!-- Support for MathJax ($...$ 수식). 페이지에 이미 MathJax 설정이 있으면 그것을 쓰고, 없으면 여기서 불러옵니다. -->
+<script>
+  if (!window.MathJax) {
+    window.MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] } };
+    var mj = document.createElement('script');
+    mj.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+    mj.async = true;
+    document.head.appendChild(mj);
+  }
+</script>
 
 <!-- end custom footer snippets -->
