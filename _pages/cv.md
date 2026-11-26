@@ -9,6 +9,8 @@ redirect_from:
 
 {% include base_path %}
 
+<p style="text-align: right;"><a href="{{ base_path }}/files/CV_Hyungtae_Baek.pdf" class="btn btn--primary" target="_blank"><i class="fas fa-file-pdf" aria-hidden="true"></i> Download CV (PDF)</a></p>
+
 <script>
   MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] } };
 </script>
